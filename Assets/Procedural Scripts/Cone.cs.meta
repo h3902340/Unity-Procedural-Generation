@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5d6a029a283c70149b225dbbc4bf2145
+timeCreated: 1528286910
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bark_mat: {fileID: 2100000, guid: d9b35e4a62062a64397dc5c92c44c83c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
