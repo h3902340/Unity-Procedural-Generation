@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+#if UNITY_EDITOR
 public class Plane : MonoBehaviour
 {
     public Material leaf_mat;
@@ -116,14 +116,11 @@ public class Plane : MonoBehaviour
         }
         #endregion
 
-#if UNITY_EDITOR
+
         //Only do this in the editor
         //a better way of getting the meshfilter using Generics
         MeshFilter mf = GetComponent<MeshFilter>();                  //Assign the copy to the meshes
-#else
-     //do this in play mode
-     mesh = GetComponent<MeshFilter>().mesh;
-#endif
+
         Mesh mesh = new Mesh();
         mesh.Clear();
         mesh.vertices = vertices;
@@ -135,3 +132,4 @@ public class Plane : MonoBehaviour
         mf.mesh = mesh;
     }
 }
+#endif

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
 public class Cone : MonoBehaviour
 {
     [HideInInspector]
@@ -304,14 +305,11 @@ public class Cone : MonoBehaviour
             }
         }
         #endregion
-#if UNITY_EDITOR
+
         //Only do this in the editor
         //a better way of getting the meshfilter using Generics
         MeshFilter mf = g.GetComponent<MeshFilter>();                  //Assign the copy to the meshes
-#else
-     //do this in play mode
-     mesh = GetComponent<MeshFilter>().mesh;
-#endif
+
         Mesh mesh = new Mesh();
         mesh.Clear();
         mesh.vertices = vertices;
@@ -326,3 +324,4 @@ public class Cone : MonoBehaviour
         mf.mesh = mesh;
     }
 }
+#endif
